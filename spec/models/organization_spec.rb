@@ -1,10 +1,8 @@
-require 'rails_helper'
-
 RSpec.describe Organization, type: :model do
   let(:organization) { build(:organization) }
 
-  it 'has many associates' do
-    expect(organization.associates).to eq([])
+  it 'has many members' do
+    expect(organization.members).to eq([])
   end
 
   it 'has many admins' do

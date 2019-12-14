@@ -1,6 +1,4 @@
 class Organization < ApplicationRecord
-  has_many :user_organizations
-  has_many :members, through: :user_organizations, source: :user
-  has_many :admin_organizations
-  has_many :admins, through: :admin_organizations
+  has_many :members, foreign_key: 'user_id', class_name: 'User'
+  has_many :admins
 end
