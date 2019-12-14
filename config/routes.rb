@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   scope ':organization_slug' do
     get '/', to: 'organizations#show', as: :landing_page
+    get '/:user_name/info', to: 'members#info'
   end
 end
