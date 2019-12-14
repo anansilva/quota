@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { build(:user) }
+  let(:organization) { create(:organization) }
+  let(:user) { build(:user, organization: organization) }
 
-  it 'has many organizations' do
-    expect(user.organizations).to eq([])
+  it 'belongs to an organization' do
+    expect(user.organization_id).to eq(organization_id)
   end
 end
