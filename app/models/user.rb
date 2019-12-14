@@ -11,6 +11,6 @@ class User < ApplicationRecord
   after_create :create_subscription
 
   def create_subscription
-    Subscription.create(user: user) if subscription.nil?
+    Subscription.create(user: self) if subscription.nil?
   end
 end
